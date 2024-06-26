@@ -42,7 +42,7 @@ export const decryptData = async (encryptedMsg, controller, account) => {
         hexToU8a(encryptedMsg[account.address]),
         controllerPublicKey
       );
-      const admin = encryptor(createPair(u8aToString(seed)));
+      const admin = encryptor(createPair(u8aToString(seed), "sr25519"));
       const data = admin.decryptMessage(
         hexToU8a(encryptedMsg.data),
         controllerPublicKey

@@ -84,7 +84,7 @@ export default class AccountManagerDapp extends AccountManager {
         base64Decode(json.encoded),
         json.encoding.type
       );
-      return encryptor(decoded);
+      return encryptor(decoded, json.encoding.type);
     }
   }
 }
