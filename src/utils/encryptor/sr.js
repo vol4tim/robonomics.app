@@ -119,7 +119,7 @@ export function decryptMessage(encryptedMessageWithNonce, secretKey) {
 
 export function encryptMessage(message, recipientPublicKey, senderKeyPair) {
   const { encryptionKey, keyDerivationSalt, macKey } = generateEncryptionKey(
-    messageKeyPair,
+    senderKeyPair,
     recipientPublicKey
   );
   const { encrypted, nonce } = naclEncrypt(
