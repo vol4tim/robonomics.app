@@ -2575,9 +2575,9 @@
   integrity sha512-NHmOkILimbLRPKvpnR+JGVckc1q4AJjxz9FnzZ3dKAVBL17AKknDy2FxXcwlJbmOXl9u7W3FS3bLDHgfKi4tQw==
 
 "@substrate/ss58-registry@^1.44.0":
-  version "1.48.0"
-  resolved "https://registry.yarnpkg.com/@substrate/ss58-registry/-/ss58-registry-1.48.0.tgz#b50b577b491274dbab55711d2e933456637e73d0"
-  integrity sha512-lE9TGgtd93fTEIoHhSdtvSFBoCsvTbqiCvQIMvX4m6BO/hESywzzTzTFMVP1doBwDDMAN4lsMfIM3X3pdmt7kQ==
+  version "1.49.0"
+  resolved "https://registry.yarnpkg.com/@substrate/ss58-registry/-/ss58-registry-1.49.0.tgz#ed9507316d13f49b2bccb65f08ec97180f71fc39"
+  integrity sha512-leW6Ix4LD7XgvxT7+aobPWSw+WvPcN2Rxof1rmd0mNC5t2n99k1N7UNEvz7YEFSOUeHWmKIY7F5q8KeIqYoHfA==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
@@ -7888,10 +7888,10 @@ robonomics-interface@^0.3.2:
     cids "^1.1.9"
     multihashing-async "^2.1.4"
 
-robonomics-ui-vue@^0.4.8:
-  version "0.4.8"
-  resolved "https://registry.yarnpkg.com/robonomics-ui-vue/-/robonomics-ui-vue-0.4.8.tgz#59b20809371a601dd115d4eb308a617c56a9f98d"
-  integrity sha512-yFaMN6yxTMJYy9Nz4pWsSrh+2FkQnhqK502i+kF3jAxljdZkdON8TIxvXDoGIIE+HP9eP5frrxQE3Qt7McZkdQ==
+robonomics-ui-vue@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/robonomics-ui-vue/-/robonomics-ui-vue-0.5.1.tgz#4f4825a7447fbc3ceaf11fe399acfa32d0400301"
+  integrity sha512-954kTSxueiaiLhmzQXuWpnncfV8ya0sQaNk26hNNTU4LD5jLf3120VZgX7K0i6XccsZjBpnQlnQgkqFBGm5Tww==
   dependencies:
     "@polkadot/keyring" "^12.6.2"
     "@polkadot/ui-keyring" "^3.6.4"
