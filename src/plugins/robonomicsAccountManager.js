@@ -69,22 +69,22 @@ export default class AccountManagerDapp extends AccountManager {
     });
   }
 
-  async addPair(pairKey) {
-    const pair = this.keyring.keyring.addFromPair(pairKey);
+  async addPair(pairKey, type = "ed25519", meta = {}) {
+    const pair = this.keyring.keyring.addFromPair(pairKey, meta, type);
     return await this.setSender(pair.address, {
       type: pair.type
     });
   }
 
   encryptor(password = null) {
-    if (!this.account.meta.isInjected && this.account.type === "ed25519") {
+    if (!this.account.meta.isInjected) {
       const json = this.account.toJson(password);
       const decoded = decodePair(
         password,
         base64Decode(json.encoded),
         json.encoding.type
       );
-      return encryptor(decoded, json.encoding.type);
+      return encryptor(decoded, this.account.type);
     }
   }
 }

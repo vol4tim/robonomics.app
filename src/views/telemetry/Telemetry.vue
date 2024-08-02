@@ -58,7 +58,7 @@ export default {
       () => store.state.robonomicsUIvue.rws.user.key,
       async (value) => {
         if (value) {
-          await robonomics.accountManager.addPair(value);
+          await robonomics.accountManager.addPair(value, "sr25519");
           isKey.value = true;
           load();
         } else {

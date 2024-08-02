@@ -172,11 +172,7 @@ export const useConfig = () => {
   const load = async () => {
     notify(store, "Find twin id");
 
-    if (
-      !controller.value ||
-      !robonomics.accountManager.account ||
-      robonomics.accountManager.account.type !== "ed25519"
-    ) {
+    if (!controller.value || !robonomics.accountManager.account) {
       notify(store, "Error");
       return;
     }
