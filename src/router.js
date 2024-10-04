@@ -6,6 +6,7 @@ import RwsSetup from "./views/RwsSetup.vue";
 import RwsSetupNew from "./views/RwsSetupNew.vue";
 import Services from "./views/Services.vue";
 import Telemetry from "./views/telemetry/Telemetry.vue";
+import Web3 from "./views/web3/Page.vue";
 
 const routes = [
   {
@@ -54,6 +55,14 @@ const routes = [
     component: Services,
     meta: {
       title: "Services"
+    }
+  },
+  {
+    path: "/robonomics-club",
+    name: "robonomics-club",
+    component: Web3,
+    meta: {
+      title: "Robonomics club"
     }
   },
   { path: "/:pathMatch(.*)*", component: PathNotFound }
