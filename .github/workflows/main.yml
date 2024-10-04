@@ -1,6 +1,7 @@
 name: github pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -10,12 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Find Tag
-        id: tagger
-        uses: jimschubert/query-tag-action@v1
-        with:
-          include: 'v*'
 
       - name: Set env
         run: |
@@ -43,7 +38,6 @@ jobs:
         env:
           VUE_APP_ROBONOMICS_UI_KEY: ${{ vars.VUE_APP_ROBONOMICS_UI_KEY }}
           VUE_APP_GIT_BRANCH: ${{ env.git_branch }}
-          VUE_APP_GIT_TAG: ${{ steps.tagger.outputs.tag }}
           VUE_APP_GIT_SHA: ${{ env.git_hash }}
 
       - name: Deploy
