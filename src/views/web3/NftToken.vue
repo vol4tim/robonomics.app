@@ -9,7 +9,7 @@
     >
       Activate
     </btn-send>
-    <span v-else>activated</span>
+    <free-minimum v-else :token="token.tokenId" />
   </div>
 </template>
 
@@ -19,11 +19,12 @@ import { ethers } from "ethers";
 import nft_abi from "./abi/NFT.json";
 import BtnSend from "./BtnSend.vue";
 import { address } from "./config";
+import FreeMinimum from "./FreeMinimum.vue";
 
 export default {
   props: ["token"],
   emits: ["activate"],
-  components: { BtnSend },
+  components: { BtnSend, FreeMinimum },
   setup(_, { emit }) {
     const activate = async (wait, tokenId) => {
       const nftContract = new ethers.Contract(
