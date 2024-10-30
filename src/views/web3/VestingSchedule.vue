@@ -9,7 +9,7 @@
     <div>
       releasable: {{ $filters.balance(computeReleasableAmount, 9, "XRT") }}
     </div>
-    <btn-send v-if="canRelease" @click="(wait) => release(schedule.id)">
+    <btn-send v-if="canRelease" @click="(wait) => release(wait, schedule.id)">
       Release
     </btn-send>
   </div>
