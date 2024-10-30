@@ -37,7 +37,13 @@ export default {
         );
 
         if (allowance >= amount) {
-          return true;
+          return;
+        }
+
+        const balance = await xrtContract.balanceOf($web3.state.account);
+
+        if (balance < amount) {
+          throw new Error("There are not enough tokens on your balance");
         }
 
         const tx = await xrtContract
