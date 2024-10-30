@@ -44,15 +44,12 @@ export default {
           .connect($web3.signer)
           .approve(address.tokenVesting, amount);
         await wait(tx, null, false);
-        return true;
       } catch (error) {
         if (error.code === "CALL_EXCEPTION" && error.data) {
-          await wait(null, xrtContract.interface.parseError(error.data).name);
-        } else {
-          await wait(null, error);
+          throw new Error(xrtContract.interface.parseError(error.data).name);
         }
+        throw error;
       }
-      return false;
     };
     const createVesting = async (wait) => {
       try {
@@ -60,18 +57,14 @@ export default {
           .connect($web3.signer)
           .createVestingSchedule();
         await wait(tx);
-        return true;
       } catch (error) {
         if (error.code === "CALL_EXCEPTION" && error.data) {
-          await wait(
-            null,
+          throw new Error(
             tokenVestingContract.interface.parseError(error.data).name
           );
-        } else {
-          await wait(null, error);
         }
+        throw error;
       }
-      return false;
     };
 
     const send = async (wait) => {
